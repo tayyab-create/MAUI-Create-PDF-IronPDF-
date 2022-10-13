@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI_PDF.MainPage"
+            >
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to IronPDF!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="PdfBtn"
+                Text="Generate PDF using HTML String"
+                SemanticProperties.Hint="Click button to generate PDF from HTML string"
+                Clicked="HtmlToPdf"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="FilePdf"
+                Text="Generate PDF using HTML File"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="HtmlFileToPdf"
+                HorizontalOptions="Center" />
+
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Entry 
+                    x:Name="urlText"
+                    Placeholder="Enter URL"
+                    MinimumWidthRequest="500"
+                    ClearButtonVisibility="WhileEditing"
+                    TextChanged="OnEntryTextChanged"
+                />
+                <Button
+                    Margin="50,0,0,0"
+                    x:Name="UrlPdf"
+                    Text="Convert URL to PDF"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    Clicked="UrlToPdf"
+                 />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
